@@ -4,6 +4,10 @@
  */
 package lab6p2_lisadiazdelvalle;
 
+import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author HTS
@@ -15,6 +19,7 @@ public class Principal extends javax.swing.JFrame {
      */
     public Principal() {
         initComponents();
+        setLocationRelativeTo(this);
     }
 
     /**
@@ -26,23 +31,229 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jFrame1 = new javax.swing.JFrame();
+        JF_SignupArtista = new javax.swing.JFrame();
+        JP_SignupArtista = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        JT_NombreArtista = new javax.swing.JTextField();
+        PF_passArtista = new javax.swing.JPasswordField();
+        JB_SignupArtista = new javax.swing.JButton();
+        JT_UserArtista = new javax.swing.JTextField();
+        JB_AtrasArtista = new javax.swing.JButton();
+        Spinner_EdadArtista = new javax.swing.JSpinner();
+        jLabel4 = new javax.swing.JLabel();
+        JF_SignupCliente = new javax.swing.JFrame();
+        jPanel2 = new javax.swing.JPanel();
+        JT_UserCliente = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        PF_passCliente = new javax.swing.JPasswordField();
+        JB_SignupCliente = new javax.swing.JButton();
+        JB_AtrasCliente = new javax.swing.JButton();
+        Spinner_EdadCliente = new javax.swing.JSpinner();
+        jLabel5 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
         jButton1 = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        JL_SignupArtista = new javax.swing.JLabel();
+        JL_SignupCliente = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        JP_SignupArtista.setBackground(new java.awt.Color(51, 51, 51));
+
+        jLabel2.setFont(new java.awt.Font("Roboto Light", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(102, 255, 0));
+        jLabel2.setText("Sign Up Artista");
+
+        JT_NombreArtista.setForeground(new java.awt.Color(204, 204, 204));
+        JT_NombreArtista.setText("Nombre");
+
+        PF_passArtista.setForeground(new java.awt.Color(204, 204, 204));
+        PF_passArtista.setText("jPasswordField1");
+
+        JB_SignupArtista.setBackground(new java.awt.Color(153, 255, 0));
+        JB_SignupArtista.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
+        JB_SignupArtista.setText("Sign Up");
+        JB_SignupArtista.setActionCommand("");
+        JB_SignupArtista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_SignupArtistaMouseClicked(evt);
+            }
+        });
+
+        JT_UserArtista.setForeground(new java.awt.Color(204, 204, 204));
+        JT_UserArtista.setText("Username");
+
+        JB_AtrasArtista.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        JB_AtrasArtista.setText("Atras");
+        JB_AtrasArtista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_AtrasArtistaActionPerformed(evt);
+            }
+        });
+
+        Spinner_EdadArtista.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        Spinner_EdadArtista.setModel(new javax.swing.SpinnerNumberModel(18, 18, null, 1));
+
+        jLabel4.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(153, 255, 0));
+        jLabel4.setText("Edad (+18)");
+
+        javax.swing.GroupLayout JP_SignupArtistaLayout = new javax.swing.GroupLayout(JP_SignupArtista);
+        JP_SignupArtista.setLayout(JP_SignupArtistaLayout);
+        JP_SignupArtistaLayout.setHorizontalGroup(
+            JP_SignupArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JP_SignupArtistaLayout.createSequentialGroup()
+                .addGroup(JP_SignupArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JP_SignupArtistaLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(JB_AtrasArtista))
+                    .addGroup(JP_SignupArtistaLayout.createSequentialGroup()
+                        .addGap(211, 211, 211)
+                        .addComponent(JB_SignupArtista))
+                    .addGroup(JP_SignupArtistaLayout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addGroup(JP_SignupArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(JP_SignupArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(PF_passArtista, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JT_UserArtista, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(JT_NombreArtista, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Spinner_EdadArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(100, Short.MAX_VALUE))
+            .addGroup(JP_SignupArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JP_SignupArtistaLayout.createSequentialGroup()
+                    .addGap(165, 165, 165)
+                    .addComponent(jLabel2)
+                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        JP_SignupArtistaLayout.setVerticalGroup(
+            JP_SignupArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JP_SignupArtistaLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(JB_AtrasArtista)
+                .addGap(68, 68, 68)
+                .addComponent(JT_NombreArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(JT_UserArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(PF_passArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(Spinner_EdadArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(JB_SignupArtista)
+                .addGap(62, 62, 62))
+            .addGroup(JP_SignupArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(JP_SignupArtistaLayout.createSequentialGroup()
+                    .addGap(36, 36, 36)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(331, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout JF_SignupArtistaLayout = new javax.swing.GroupLayout(JF_SignupArtista.getContentPane());
+        JF_SignupArtista.getContentPane().setLayout(JF_SignupArtistaLayout);
+        JF_SignupArtistaLayout.setHorizontalGroup(
+            JF_SignupArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(JP_SignupArtista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        JF_SignupArtistaLayout.setVerticalGroup(
+            JF_SignupArtistaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(JP_SignupArtista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel2.setBackground(new java.awt.Color(51, 51, 51));
+
+        JT_UserCliente.setForeground(new java.awt.Color(204, 204, 204));
+        JT_UserCliente.setText("Username");
+
+        jLabel3.setFont(new java.awt.Font("Roboto Light", 1, 24)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(102, 255, 0));
+        jLabel3.setText("Sign Up Cliente");
+
+        PF_passCliente.setForeground(new java.awt.Color(204, 204, 204));
+        PF_passCliente.setText("jPasswordField1");
+
+        JB_SignupCliente.setBackground(new java.awt.Color(153, 255, 0));
+        JB_SignupCliente.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
+        JB_SignupCliente.setText("Sign Up");
+        JB_SignupCliente.setActionCommand("");
+        JB_SignupCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_SignupClienteMouseClicked(evt);
+            }
+        });
+
+        JB_AtrasCliente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        JB_AtrasCliente.setText("Atras");
+        JB_AtrasCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_AtrasClienteActionPerformed(evt);
+            }
+        });
+
+        Spinner_EdadCliente.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        Spinner_EdadCliente.setModel(new javax.swing.SpinnerNumberModel(12, 12, null, 1));
+
+        jLabel5.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 255, 0));
+        jLabel5.setText("Edad (+12)");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(JB_AtrasCliente))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Spinner_EdadCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(PF_passCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(87, 87, 87)
+                                        .addComponent(jLabel3))
+                                    .addComponent(JT_UserCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(218, 218, 218)
+                        .addComponent(JB_SignupCliente)))
+                .addContainerGap(104, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(JB_AtrasCliente)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(JT_UserCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(PF_passCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addComponent(Spinner_EdadCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(JB_SignupCliente)
+                .addGap(35, 35, 35))
+        );
+
+        javax.swing.GroupLayout JF_SignupClienteLayout = new javax.swing.GroupLayout(JF_SignupCliente.getContentPane());
+        JF_SignupCliente.getContentPane().setLayout(JF_SignupClienteLayout);
+        JF_SignupClienteLayout.setHorizontalGroup(
+            JF_SignupClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        JF_SignupClienteLayout.setVerticalGroup(
+            JF_SignupClienteLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -63,37 +274,54 @@ public class Principal extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Roboto Thin", 0, 18)); // NOI18N
         jButton1.setText("Login");
 
-        jLabel2.setFont(new java.awt.Font("Roboto Thin", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(153, 255, 0));
-        jLabel2.setText("Sign up");
+        JL_SignupArtista.setFont(new java.awt.Font("Roboto Thin", 0, 14)); // NOI18N
+        JL_SignupArtista.setForeground(new java.awt.Color(153, 255, 0));
+        JL_SignupArtista.setText("Sign up Artista");
+        JL_SignupArtista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JL_SignupArtistaMouseClicked(evt);
+            }
+        });
+
+        JL_SignupCliente.setFont(new java.awt.Font("Roboto Thin", 0, 14)); // NOI18N
+        JL_SignupCliente.setForeground(new java.awt.Color(153, 255, 0));
+        JL_SignupCliente.setText("Sign up Cliente");
+        JL_SignupCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JL_SignupClienteMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(206, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(217, 217, 217))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(254, 254, 254)
+                            .addComponent(jButton1))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(115, 115, 115)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jPasswordField1)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGap(179, 179, 179)
+                            .addComponent(JL_SignupArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(JL_SignupCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
-                            .addComponent(jTextField1)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(251, 251, 251)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(266, 266, 266)
-                        .addComponent(jLabel2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(16, 16, 16)
+                        .addComponent(jLabel1)
+                        .addGap(96, 96, 96)))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(31, 31, 31)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -102,8 +330,10 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(54, 54, 54)
                 .addComponent(jButton1)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JL_SignupArtista)
+                    .addComponent(JL_SignupCliente))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -119,6 +349,70 @@ public class Principal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void JL_SignupArtistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JL_SignupArtistaMouseClicked
+        this.setVisible(false);
+        JF_SignupArtista.pack();
+        JF_SignupArtista.setLocationRelativeTo(this);
+        JF_SignupArtista.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        JF_SignupArtista.setVisible(true);
+    }//GEN-LAST:event_JL_SignupArtistaMouseClicked
+
+    private void JL_SignupClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JL_SignupClienteMouseClicked
+        this.setVisible(false);
+        JF_SignupCliente.pack();
+        JF_SignupCliente.setLocationRelativeTo(this);
+        JF_SignupCliente.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        JF_SignupCliente.setVisible(true);
+    }//GEN-LAST:event_JL_SignupClienteMouseClicked
+
+    private void JB_AtrasArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_AtrasArtistaActionPerformed
+        JF_SignupArtista.setVisible(false);
+        this.setVisible(true);  
+    }//GEN-LAST:event_JB_AtrasArtistaActionPerformed
+
+    private void JB_AtrasClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_AtrasClienteActionPerformed
+         JF_SignupCliente.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_JB_AtrasClienteActionPerformed
+
+    private void JB_SignupClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_SignupClienteMouseClicked
+        try {
+            if((Integer)Spinner_EdadCliente.getValue()>=12 && SameUser(JT_UserCliente.getText())==false){
+             u = new oyente (JT_UserCliente.getText(),PF_passCliente.getText(),((Integer)Spinner_EdadCliente.getValue()));
+             usuarios.add(u);
+                JOptionPane.showMessageDialog(JF_SignupCliente, "Cuenta creada exitosamente");
+            }else if ((Integer)Spinner_EdadCliente.getValue()<12){
+                JOptionPane.showMessageDialog(JF_SignupCliente, "Debe de ser mayor de 12");
+                
+            }else if (SameUser(JT_UserCliente.getText())==true){
+                 JOptionPane.showMessageDialog(JF_SignupCliente, "Este usuario ya existe");
+            }
+            JT_UserCliente.setText("");
+            PF_passCliente.setText("");
+        } catch (Exception e) {
+        }
+       
+    }//GEN-LAST:event_JB_SignupClienteMouseClicked
+
+    private void JB_SignupArtistaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_SignupArtistaMouseClicked
+        try {
+            if((Integer)Spinner_EdadArtista.getValue()>=18 && SameUser(JT_UserArtista.getText())==false){
+             u = new Artista (JT_NombreArtista.getText(),JT_UserArtista.getText(),PF_passArtista.getText(),((Integer)Spinner_EdadArtista.getValue()));
+             usuarios.add(u);
+                JOptionPane.showMessageDialog(JF_SignupCliente, "Cuenta creada exitosamente");
+            }else if ((Integer)Spinner_EdadCliente.getValue()<18){
+                JOptionPane.showMessageDialog(JF_SignupCliente, "Debe de ser mayor de 18");
+                
+            }else if (SameUser(JT_UserArtista.getText())==true){
+                 JOptionPane.showMessageDialog(JF_SignupCliente, "Este usuario ya existe");
+            }
+            JT_NombreArtista.setText("");
+            JT_UserArtista.setText("");
+            PF_passArtista.setText("");
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_JB_SignupArtistaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -154,14 +448,47 @@ public class Principal extends javax.swing.JFrame {
             }
         });
     }
+        public boolean SameUser(String username) {
+        boolean same = false;
+        for (int i = 0; i < usuarios.size(); i++) {
+            Usuario user = usuarios.get(i);
+            if (user.getUser().equals(username)) {
+                same = true;
+            }
+
+        }
+
+        return same;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JB_AtrasArtista;
+    private javax.swing.JButton JB_AtrasCliente;
+    private javax.swing.JButton JB_SignupArtista;
+    private javax.swing.JButton JB_SignupCliente;
+    private javax.swing.JFrame JF_SignupArtista;
+    private javax.swing.JFrame JF_SignupCliente;
+    private javax.swing.JLabel JL_SignupArtista;
+    private javax.swing.JLabel JL_SignupCliente;
+    private javax.swing.JPanel JP_SignupArtista;
+    private javax.swing.JTextField JT_NombreArtista;
+    private javax.swing.JTextField JT_UserArtista;
+    private javax.swing.JTextField JT_UserCliente;
+    private javax.swing.JPasswordField PF_passArtista;
+    private javax.swing.JPasswordField PF_passCliente;
+    private javax.swing.JSpinner Spinner_EdadArtista;
+    private javax.swing.JSpinner Spinner_EdadCliente;
     private javax.swing.JButton jButton1;
-    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
+Usuario u;
+ArrayList<Usuario> usuarios = new ArrayList();
 }
