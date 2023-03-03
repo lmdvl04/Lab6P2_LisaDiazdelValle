@@ -15,11 +15,10 @@ public class Singles extends Lanzamiento{
         super();
     }
 
-    
-    public Singles(Cancion cancion, String titulo, String fecha, int likes) {
-        super(titulo, fecha, likes);
+    public Singles(Cancion cancion, String titulo, String fecha, int likes, String tipo) {
+        super(titulo, fecha, likes, tipo);
         this.cancion = cancion;
-    }
+    } 
 
     public Cancion getCancion() {
         return cancion;

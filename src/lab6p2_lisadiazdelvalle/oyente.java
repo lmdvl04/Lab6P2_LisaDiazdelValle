@@ -19,10 +19,11 @@ public class oyente extends Usuario{
         super();
     }
 
-    public oyente( String user, String contra, int edad) {
-        super(user, contra, edad);
-        
+    public oyente(String user, String contra, String tipo, int edad) {
+        super(user, contra, tipo, edad);
     }
+
+   
 
 
     public ArrayList<Cancion> getCancionesLike() {

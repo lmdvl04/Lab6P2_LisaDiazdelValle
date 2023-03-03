@@ -12,6 +12,7 @@ import java.util.ArrayList;
  */
 public class Artista extends Usuario{
     private String nombre;
+    
     private ArrayList <Cancion> canciones = new ArrayList();
     private ArrayList <Album> albumes = new ArrayList();
 
@@ -19,8 +20,8 @@ public class Artista extends Usuario{
         super();
     }
 
-    public Artista(String nombre, String user, String contra, int edad) {
-        super(user, contra, edad);
+    public Artista(String nombre, String user, String contra, String tipo, int edad) {
+        super(user, contra, tipo, edad);
         this.nombre = nombre;
     }
 
@@ -49,6 +50,8 @@ public class Artista extends Usuario{
     public void setAlbumes(ArrayList<Album> albumes) {
         this.albumes = albumes;
     }
+
+    
 
     @Override
     public String toString() {

@@ -11,15 +11,19 @@ package lab6p2_lisadiazdelvalle;
 public class Lanzamiento {
     protected String titulo, fecha;
     protected int likes;
+        private String tipo;
 
     public Lanzamiento() {
     }
 
-    public Lanzamiento(String titulo, String fecha, int likes) {
+    public Lanzamiento(String titulo, String fecha, int likes, String tipo) {
         this.titulo = titulo;
         this.fecha = fecha;
         this.likes = likes;
+        this.tipo = tipo;
     }
+
+   
 
     public String getTitulo() {
         return titulo;
@@ -44,6 +48,15 @@ public class Lanzamiento {
     public void setLikes(int likes) {
         this.likes = likes;
     }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+    
 
     @Override
     public String toString() {

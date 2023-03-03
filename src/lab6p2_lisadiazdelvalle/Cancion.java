@@ -10,12 +10,12 @@ package lab6p2_lisadiazdelvalle;
  */
 public class Cancion {
     private String titulo,referenciaAlbum;
-    private int duracion;
+    private String duracion;
 
     public Cancion() {
     }
 
-    public Cancion(String titulo, String referenciaAlbum, int duracion) {
+    public Cancion(String titulo, String referenciaAlbum, String duracion) {
         this.titulo = titulo;
         this.referenciaAlbum = referenciaAlbum;
         this.duracion = duracion;
@@ -37,11 +37,11 @@ public class Cancion {
         this.referenciaAlbum = referenciaAlbum;
     }
 
-    public int getDuracion() {
+    public String getDuracion() {
         return duracion;
     }
 
-    public void setDuracion(int duracion) {
+    public void setDuracion(String duracion) {
         this.duracion = duracion;
     }
 

@@ -18,10 +18,11 @@ public class Album extends Lanzamiento {
         super();
     }
 
-    public Album(int cantidadCanciones, String titulo, String fecha, int likes) {
-        super(titulo, fecha, likes);
+    public Album(int cantidadCanciones, String titulo, String fecha, int likes, String tipo) {
+        super(titulo, fecha, likes, tipo);
         this.cantidadCanciones = cantidadCanciones;
     }
+
 
     public int getCantidadCanciones() {
         return cantidadCanciones;
@@ -39,6 +40,8 @@ public class Album extends Lanzamiento {
         this.canciones = canciones;
     }
 
+
+    
     @Override
     public String toString() {
         return "Album{" + "cantidadCanciones=" + cantidadCanciones + ", canciones=" + canciones + '}';
