@@ -20,7 +20,7 @@ public class Artista extends Usuario{
         super();
     }
 
-    public Artista(String nombre, String user, String contra, String tipo, int edad) {
+    public Artista(String user, String contra,String nombre, String tipo, int edad) {
         super(user, contra, tipo, edad);
         this.nombre = nombre;
     }

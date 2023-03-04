@@ -44,7 +44,7 @@ public class Album extends Lanzamiento {
     
     @Override
     public String toString() {
-        return "Album{" + "cantidadCanciones=" + cantidadCanciones + ", canciones=" + canciones + '}';
+        return super.toString();
     }
     
     
