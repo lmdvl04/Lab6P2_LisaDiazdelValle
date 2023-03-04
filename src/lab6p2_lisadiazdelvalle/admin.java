@@ -68,7 +68,6 @@ public class admin {
     public void setPlaylists(ArrayList<Playlist> playlists) {
         this.playlists = playlists;
     }
-    
 
     @Override
     public String toString() {
@@ -143,7 +142,7 @@ public class admin {
             bw = new BufferedWriter(fw);
 
             for (Cancion c : canciones) {
-                linea += c.getTitulo() + ";" + c.getReferenciaAlbum() + ";" + c.getDuracion() + ";" + "\n";
+                linea += c.getTitulo() + ";" + c.getReferenciaAlbum() + ";" + c.getDuracion() + "\n";
             }
             bw.write(linea);
 
@@ -165,9 +164,9 @@ public class admin {
                     while ((linea = br.readLine()) != null) {
                         try {
                             String datos[] = linea.split(";");
-                                Cancion c = new Cancion(datos[0], datos[1], datos[2]);
-                                canciones.add(c);
-                           
+                            Cancion c = new Cancion(datos[0], datos[1], datos[2]);
+                            canciones.add(c);
+
                         } catch (Exception e) {
                         }
                     }
@@ -179,18 +178,61 @@ public class admin {
 
         }
     }
-}
 
-// Scanner sc = null;
-//        users = new ArrayList();
-//        if (Archivo.exists())
-//            try {
-//            sc = new Scanner(Archivo);
-//            sc.useDelimiter("|");
-//            while (sc.hasNext()) {
-//                users.add(new Usuario(sc.next(), sc.next(), sc.next(), sc.nextInt()));
-//
-//            }
-//        } catch (Exception e) {
-//        }
-//        sc.close();
+    public void escribirArchivoLan() throws IOException {
+        FileWriter fw = null;
+        BufferedWriter bw = null;
+        String linea = "";
+        try {
+            fw = new FileWriter(Archivo, false);
+            bw = new BufferedWriter(fw);
+
+            for (Lanzamiento l : lanzamientos) {
+                if (l instanceof Album) {
+                    linea += ((Album) l).getCantidadCanciones() + ";" + l.getTitulo() + ";" + l.getFecha() + ";" + l.getLikes() + ";" + ((Album) l).getCanciones() + "\n";
+                } else if (l instanceof Singles) {
+                    linea += ((Singles) l).getCancion() + ";" + l.getTitulo() + ";" + l.getFecha() + ";" + l.getLikes() + l.getTipo() + "\n";
+                }
+            }
+            bw.write(linea);
+
+        } catch (Exception ex) {
+        }
+        bw.flush();
+        bw.close();
+        fw.close();
+    }
+
+    public void cargarLan() {
+        try {
+            FileReader fr = new FileReader(Archivo);
+            BufferedReader br = new BufferedReader(fr);
+            lanzamientos = new ArrayList();
+            if (Archivo.exists()) {
+                String linea = "";
+                try {
+                    while ((linea = br.readLine()) != null) {
+                        try {
+                            String datos[] = linea.split(";");
+                            if (datos[4].equals("Album")) {
+                                Album a = new Album(Integer.parseInt(datos[0]), datos[1], datos[2], Integer.parseInt(datos[3]), datos[4]);
+                                lanzamientos.add(a);
+                            } else if (datos[4].equals("Single")) {
+                                Cancion c = canciones.get(0);
+                                Singles s = new Singles(c, datos[1], datos[2], Integer.parseInt(datos[3]), datos[4]);
+                                lanzamientos.add(s);
+                            }
+                        } catch (Exception e) {
+                        }
+                    }
+                } catch (Exception e) {
+                }
+
+            }
+        } catch (Exception e) {
+
+        }
+
+    }
+
+}

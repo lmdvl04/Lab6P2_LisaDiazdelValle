@@ -29,8 +29,12 @@ public class Principal extends javax.swing.JFrame {
         
         ap.cargar();
         usuarios= ap.getUsers();
+        
         cancion.cargarCancion();
         canciones = cancion.getCanciones();
+        
+        lanzamiento.cargarLan();
+        lanzamientos = lanzamiento.getLanzamientos();
         
     }
 
@@ -858,9 +862,19 @@ public class Principal extends javax.swing.JFrame {
         try {
             if (((String) CB_Tipo.getSelectedItem()).equals("Album")) {
                 l = new Album(0, JT_Titulo.getText(), JT_Fecha.getText(), 0, "Album");
-                lanzamientos.add(l);
+               // lanzamientos.add(l);
+                int cant, likes;
+                String titulo, fecha, tipo;
+                cant =  0 ;
+                titulo = JT_Titulo.getText();
+                fecha = JT_Fecha.getText();
+                likes= 0;
+                Lanzamiento album = new Album(cant,titulo, fecha, likes, "Album");
+                lanzamiento.getLanzamientos().add(album);
+                lanzamiento.escribirArchivoLan();
                 JOptionPane.showMessageDialog(JD_NuevoLanzamiento, "Album creado con exito");
-
+             
+ 
                 DefaultTreeModel modelo = (DefaultTreeModel) jTree1.getModel();
                 DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
                 DefaultMutableTreeNode nodoNombre;
@@ -909,6 +923,15 @@ public class Principal extends javax.swing.JFrame {
                 Cancion can = new Cancion(titulo,ref,dur);
                 canciones.add(can);
                 cancion.escribirArchivocancion();
+
+                String tit, fecha;
+                int  likes;
+                tit = JT_TituloCancion.getText();
+                fecha = JT_Fecha.getText();
+                likes= 0;
+                Lanzamiento sin = new Singles(can,tit, fecha, likes, "Album");
+                lanzamiento.getLanzamientos().add(sin);
+                lanzamiento.escribirArchivoLan();
             JOptionPane.showMessageDialog(JD_NuevoLanzamiento, "Single creado con exito");
 
             DefaultTreeModel modelo = (DefaultTreeModel) jTree1.getModel();
@@ -1165,5 +1188,6 @@ public class Principal extends javax.swing.JFrame {
     DefaultMutableTreeNode nodo_seleccionado;
     admin ap = new admin("./Usuarios.txt");
     admin cancion = new admin ("./Cancion.txt");
+    admin lanzamiento = new admin ("./Lanzamiento.txt");
     
 }
